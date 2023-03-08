@@ -34,7 +34,7 @@ func createResourceGroup(payload *ResourceGroup){
 	}
 
 	log.Print("Environment setting for terraform")
-	workingDir := "/Users/gowtham.ravithoughtworks.com/Documents/infra/infra-exec/node/resource_group"
+	workingDir := "../../../../../../../node/resource_group"
 	tf, err := tfexec.NewTerraform(workingDir, execPath)
 	if err != nil {
 		log.Fatalf("error running NewTerraform: %s", err)
