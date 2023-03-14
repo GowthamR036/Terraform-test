@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Terraform = void 0;
-require("node");
 const child_process_1 = require("child_process");
 class Terraform {
     constructor(workingDir, targets, state, variables, parallelism, var_file, isEnvVarsIncluded, terraformBinPath) {
@@ -21,7 +20,7 @@ class Terraform {
         cmd += reconfigure ? ` -reconfigure` : '';
         try {
             const output = (0, child_process_1.execSync)(cmd, { cwd: this.workingDir });
-            console.log('Output:', output);
+            console.log('Output:', output.toString());
         }
         catch (err) {
             console.error('Error:', err);

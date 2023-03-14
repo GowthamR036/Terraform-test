@@ -1,4 +1,3 @@
-import 'node';
 import { Set } from 'typescript';
 import { execSync } from 'child_process';
 
@@ -44,7 +43,7 @@ export class Terraform {
 
     try {
       const output = execSync(cmd, { cwd: this.workingDir });
-      console.log('Output:', output);
+      console.log('Output:', output.toString());
     } catch (err) {
       console.error('Error:', err);
       return false;
